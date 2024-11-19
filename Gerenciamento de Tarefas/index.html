@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Tarefas</h1>
+    </header>
+    <main>
+        <section class="add-task">
+            <h2>Adicionar Tarefa</h2>
+            <form action="add_tarefa.php" method="POST">
+                <input type="text" name="descricao" placeholder="Descrição da tarefa" required>
+                <input type="date" name="data_vencimento" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+        <section class="tasks">
+            <h2>Tarefas</h2>
+            <div class="task-list">
+                <h3>Não Concluídas</h3>
+                <?php
+                // Código PHP para listar tarefas não concluídas
+                ?>
+            </div>
+            <div class="task-list">
+                <h3>Concluídas</h3>
+                <?php
+                // Código PHP para listar tarefas concluídas
+                ?>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gerenciador de Tarefas</p>
+    </footer>
+</body>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem;
+}
+
+.add-task, .tasks {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+form input, form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+form input[type="text"], form input[type="date"] {
+  flex: 1;
+}
+
+form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+.task-list {
+  margin-bottom: 2rem;
+}
+
+.task-list h3 {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f1f1f1;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  background: #d4edda;
+}
+
+.task-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.task-item button:hover {
+  color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+  color: #555;
+}
+</style>
+</html>
