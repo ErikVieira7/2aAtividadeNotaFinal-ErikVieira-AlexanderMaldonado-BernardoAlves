@@ -1,7 +1,6 @@
 <?php
 require 'database.php';
 
-// Buscar todos os livros
 $stmt = $db->query("SELECT * FROM livros");
 $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -16,7 +15,6 @@ $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="container">
         <h1>Livraria</h1>
-        <!-- Formulário para adicionar livros -->
         <h2>Adicionar Livro</h2>
         <form action="add_book.php" method="post">
             <input type="text" name="titulo" placeholder="Título" required>
@@ -24,7 +22,6 @@ $livros = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <input type="number" name="ano" placeholder="Ano de Publicação" required>
             <button type="submit">Adicionar</button>
         </form>
-        <!-- Lista de livros -->
         <h2>Livros Cadastrados</h2>
         <?php if (count($livros) > 0): ?>
             <ul class="book-list">
